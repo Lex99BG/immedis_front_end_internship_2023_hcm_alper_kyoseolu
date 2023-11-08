@@ -1,0 +1,324 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit User</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Profile Picture</h3>
+            <img class="img-fluid" [src]="user.profilePic" />
+            <ng-template #popContent>
+              <div class="row">
+                <div
+                  class="col-4 profil-pics"
+                  *ngFor="let img of profilePics; let i = index"
+                >
+                  <img
+                    (click)="setProfilePic(i)"
+                    class="img-fluid"
+                    [src]="img"
+                  />
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #popTitle>Choose Avatar</ng-template>
+            <button
+              type="button"
+              class="add-prof-pic"
+              placement="bottom"
+              [ngbPopover]="popContent"
+              [popoverTitle]="popTitle"
+              popoverClass="my-custom-class"
+            >
+              <img class="img-fluid" src="../../assets/photograph.png" />
+            </button>
+          </div>
+          <div class="col-md-8">
+            <form
+              class="d-flex flex-column"
+              [formGroup]="form"
+              (submit)="editUser()"
+            >
+              <label>Name</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="John Doe"
+                formControlName="name"
+                pattern="\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+"
+                required
+                minlength="4"
+                maxlength="30"
+              />
+              <div
+                *ngIf="
+                  form.get('name')?.invalid &&
+                  (form.get('name')?.dirty || form.get('name')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('name')?.hasError('required')"
+                >
+                  Name is required.
+                </div>
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('name')?.hasError('minlength')"
+                >
+                  Name must be at least 4 characters long.
+                </div>
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('name')?.hasError('forbiddenName')"
+                >
+                  Name cannot be Bob.
+                </div>
+              </div>
+
+              <label>User Name</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="JohnDoe"
+                formControlName="userName"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('userName')?.invalid &&
+                  (form.get('userName')?.dirty || form.get('userName')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('userName')?.hasError('required')"
+                >
+                  User Name is required.
+                </div>
+              </div>
+
+              <label>Email</label>
+              <input
+                class="form-control"
+                type="email"
+                placeholder="JohnDoe@mail.com"
+                formControlName="email"
+                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('email')?.invalid &&
+                  (form.get('email')?.dirty || form.get('email')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('email')?.hasError('required')"
+                >
+                  Email is required.
+                </div>
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('email')?.hasError('pattern')"
+                >
+                  Invalid email format.
+                </div>
+              </div>
+
+              <label>Phone Number</label>
+              <input
+                class="form-control"
+                type="tel"
+                placeholder="+359782838822"
+                formControlName="tel"
+                pattern="^(\(?\+?[0-9]*\)?)?[0-9_\- \(\)]*$"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('tel')?.invalid &&
+                  (form.get('tel')?.dirty || form.get('tel')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('tel')?.hasError('required')"
+                >
+                  Phone Number is required.
+                </div>
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('tel')?.hasError('pattern')"
+                >
+                  Invalid phone number format.
+                </div>
+              </div>
+
+              <label>Job Title</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Front-end Developer"
+                formControlName="jobTitle"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('jobTitle')?.invalid &&
+                  (form.get('jobTitle')?.dirty || form.get('jobTitle')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('jobTitle')?.hasError('required')"
+                >
+                  Job Title is required.
+                </div>
+              </div>
+
+              <label>Status</label>
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Junior"
+                formControlName="status"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('status')?.invalid &&
+                  (form.get('status')?.dirty || form.get('status')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('status')?.hasError('required')"
+                >
+                  Status is required.
+                </div>
+              </div>
+
+              <label>Salary</label>
+              <input
+                class="form-control"
+                type="number"
+                placeholder="5000"
+                formControlName="salary"
+                required
+              />
+              <div
+                *ngIf="
+                  form.get('salary')?.invalid &&
+                  (form.get('salary')?.dirty || form.get('salary')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('salary')?.hasError('required')"
+                >
+                  Salary is required.
+                </div>
+              </div>
+
+              <label for="userType">User Type</label>
+              <select
+                class="form-select"
+                name="userType"
+                id="userType"
+                formControlName="userType"
+                required
+              >
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+              </select>
+              <div
+                *ngIf="
+                  form.get('userType')?.invalid &&
+                  (form.get('userType')?.dirty || form.get('userType')?.touched)
+                "
+                class="alert"
+              >
+                <div
+                  class="text-danger"
+                  *ngIf="form.get('userType')?.hasError('required')"
+                >
+                  User Type is required.
+                </div>
+              </div>
+              <hr />
+
+              <div class="d-flex justify-content-center my-2 text-end">
+                <input
+                  class="btn btn-lg btn-outline-danger"
+                  type="reset"
+                  value="Clear All Inputs"
+                />
+                <input
+                  class="btn btn-lg btn-danger mx-2"
+                  type="submit"
+                  value="Update User"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="row details-card my-4">
+    <div class="col-md-2">
+      <img [src]="user.profilePic" alt="User One" class="card-img" />
+    </div>
+    <div class="col-md-5">
+      <h2>Personal Information</h2>
+      <ul>
+        <li><strong>Name: </strong> {{ user.name }}</li>
+        <li><strong>User Name: </strong> {{ user.userName }}</li>
+        <li><strong>Email: </strong> {{ user.email }}</li>
+        <li><strong>Phone Number: </strong> {{ user.tel }}</li>
+        <li><strong>User Type: </strong> {{ user.userType }}</li>
+      </ul>
+    </div>
+    <div class="col-md-5">
+      <h2>Company Information</h2>
+      <ul>
+        <li><strong>Job Title: </strong> {{ user.jobTitle }}</li>
+        <li><strong>Status: </strong>{{ user.status }}</li>
+        <li><strong>Salary: </strong>{{ user.salary }} $</li>
+      </ul>
+    </div>
+    <div class="col-md-1">
+      <a routerLink="/users-list" class="back-nav"
+        ><img class="img-fluid" src="../../../assets/arrow-left.png" alt=""
+      /></a>
+    </div>
+    <div class="col-md-11 text-end">
+      <button class="mx-2 btn btn-md btn-success" (click)="openModal(content)">
+        EDIT
+      </button>
+      <button class="btn btn-md btn-danger" (click)="deleteUser(index)">
+        DELETE
+      </button>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

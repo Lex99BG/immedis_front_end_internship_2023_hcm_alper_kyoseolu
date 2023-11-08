@@ -1,0 +1,75 @@
+.add-prof-pic {
+    margin-bottom: 10px;
+    border: 0;
+    background:#DC3545;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.profil-pics img{
+    cursor: pointer;
+}
+.profil-pics img:hover {
+    margin-top: -2px;
+    transition: all ease-in-out 0.2s;
+}
+.pass-img {
+    width: 33px;
+    transition: all 0.8s ease;
+}
+.back-navigate {
+    text-decoration: none;
+    color: #333;
+}
+.password-list p {
+    padding: 0;
+    margin: 0;
+}
+.back-nav {
+    border: 1px solid #e6e6e6;
+    border-radius: 50%;
+    background: #fff6;
+    padding: 10px 11px 12px 11px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+} 
+.back-nav img{
+    width: 20px;
+    height: 19px;
+}
+.back-nav:hover {
+    background-color: darkseagreen;
+    border: 1px solid darkseagreen;
+}
+.details-card {
+    background-color: #ebecfa57;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border: 1px solid #e6e6e6;
+    height: 443px;
+    align-content: space-between;
+    align-items: center;
+}
+.alert {
+    font-style: italic;
+      padding: 0;
+      margin: 3px;
+  }
+  .footer-btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+  @media only screen and (max-width: 769px) {
+    .details-card {
+     height: auto;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    .row { font-size: 15px;}
+    .row h2 {font-size: 17px;}
+  }
+  
+

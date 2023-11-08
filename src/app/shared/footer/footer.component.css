@@ -1,0 +1,30 @@
+footer {
+    padding: 17px;
+}
+.row {
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.logo img {
+    width: 120px;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.active-link{
+    color: #dc3545 !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .nav {
+        padding-top: 20px;
+      justify-content: center !important;
+    }
+    .copyright {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+  }

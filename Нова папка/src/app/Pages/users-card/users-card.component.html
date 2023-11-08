@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+<div class="card">
+  <div class="image-content">
+    <span
+      class="overlay"
+      [style.background-color]="applyBackground(user)"
+      [ngClass]="{
+        'user-type-admin': user.userType === 'Admin',
+        'user-type-user': user.userType === 'User'
+      }"
+    ></span>
+    <div class="card-image">
+      <a [routerLink]="isAdmin ? ['/user', index] : null">
+        <img
+          [src]="user.profilePic"
+          class="card-img"
+          [style.border]="applyBorder(user)"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="card-content">
+    <h2 class="user-name">
+      <a [routerLink]="isAdmin ? ['/user', index] : null">{{ user.name }}</a>
+    </h2>
+    <p class="description">
+      <span>Job Title: </span> <b>{{ user.jobTitle }}</b>
+    </p>
+    <p class="description">
+      <span>position: </span> <b>{{ user.userType }}</b>
+    </p>
+    <p class="description">
+      <span>position: </span> <b>{{ user.tel }}</b>
+    </p>
+    <p class="description">{{ user.email }}</p>
+
+    <button
+      class="my-2 btn btn-md btn-outline-danger"
+      (click)="deleteUser(index)"
+      *ngIf="isAdmin"
+    >
+      Delete
+    </button>
+  </div>
+</div>

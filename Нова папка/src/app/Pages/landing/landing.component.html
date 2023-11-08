@@ -1,0 +1,175 @@
+<app-navbar></app-navbar>
+<main>
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Skill Flow</h1>
+            <p class="opacity-75">The best Human Capital Management App.</p>
+            <p>
+              <a
+                class="btn btn-md btn-danger mx-2"
+                aria-current="page"
+                routerLink="/login"
+                *ngIf="!token"
+                >SIGN IN</a
+              ><a
+                class="btn btn-md btn-danger mx-2"
+                aria-current="page"
+                routerLink="/login"
+                *ngIf="token"
+                (click)="logOut()"
+                >SIGN OUT
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Efficiency Meets Security</h1>
+            <p>
+              In the realm of HR, efficiency and security are non-negotiable.
+              Your HR team deserves the best - and this is it.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="">
+          <div class="carousel-caption text-end">
+            <h1>Unleash the Power of Data-Driven HR Management</h1>
+            <p>
+              Imagine a world where you effortlessly create, organize, and
+              manage personnel records. Our app redefines HR management, putting
+              the power of data at your fingertips. Revolutionize your HR
+              processes today!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container marketing">
+    <div class="row py-5 text-center">
+      <h2 class="featurette-heading fw-normal lh-1 py-4">
+        What is possible with my application?
+      </h2>
+      <div class="col-sm-6 col-lg-3">
+        <img class="img-fluid" src="../../../assets/create.png" alt="" />
+        <h2 class="fw-normal">Creating</h2>
+        <p class="lead">Efficiently add new records to track personnel data.</p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <img class="img-fluid" src="../../../assets/listing.png" alt="" />
+        <h2 class="fw-normal">Listing</h2>
+        <p class="lead">
+          Easily organize, sort, and view records for quick access.
+        </p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <img class="img-fluid" src="../../../assets/edit.png" alt="" />
+        <h2 class="fw-normal">Editing</h2>
+        <p class="lead">
+          Modify and update individual information with precision.
+        </p>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <img class="img-fluid" src="../../../assets/trash.png" alt="" />
+        <h2 class="fw-normal">Deleting</h2>
+        <p class="lead">Safely remove obsolete records with a few clicks.</p>
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette py-5">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Human Capital Management App:
+          <span class="text-body-secondary">It’ll blow your mind.</span>
+        </h2>
+        <p class="lead">
+          Unleash the potential of your HR operations with our cutting-edge
+          Human Capital Management App. Imagine a world where managing personnel
+          data is a breeze, and every interaction with the system is seamless
+          and efficient.
+        </p>
+        <p class="lead">
+          Another featurette? Of course. Security is paramount; we've integrated
+          a robust login system to ensure your data's safety. With at least two
+          types of users, you can control access and permissions as needed.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <img
+          class="img-fluid rounded"
+          src="../../assets/woman-three.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+
+    <div class="row featurette py-5">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">
+          Oh yeah, it’s that good.
+          <span class="text-body-secondary">See for yourself.</span>
+        </h2>
+        <p class="lead">
+          Embark on an extraordinary journey of HR management that transforms
+          the way you operate. Our Human Capital Management App is more than
+          just software; it's your strategic advantage.
+        </p>
+        <p class="lead">
+          Elevate your HR processes to a whole new level. We're talking about
+          streamlined data management, intuitive interfaces, and the power to
+          make data-driven decisions.
+        </p>
+        <p class="lead">
+          Ready for another game-changer? Stay tuned for the next featurette,
+          where we'll dive deeper into the transformative capabilities of our
+          Human Capital Management App.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img
+          class="img-fluid rounded"
+          src="../../assets/woman-two.jpg"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <hr class="featurette-divider" />
+  </div>
+</main>
+
+<app-footer></app-footer>

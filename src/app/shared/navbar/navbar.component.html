@@ -1,0 +1,71 @@
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+  data-bs-theme="dark"
+>
+  <div class="container">
+    <a class="navbar-brand" routerLink=""
+      ><img class="logo" src="../../assets/skillFlow-logo.png" alt="" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{ exact: true }"
+            aria-current="page"
+            routerLink="/"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            [routerLinkActive]="['active-link']"
+            class="nav-link"
+            aria-disabled="true"
+            routerLink="/users-list"
+            [ngClass]="{ disabled: !token }"
+            >Users List</a
+          >
+        </li>
+      </ul>
+
+      <a
+        class="profile nav-link"
+        routerLink="/profile"
+        *ngIf="token"
+        placement="bottom"
+        ngbTooltip="View My Profile"
+      >
+        <img [src]="user.profilePic" class="img-fluid" />
+      </a>
+      <div class="btns">
+        <a
+          class="btn btn-md btn-outline-danger mx-2"
+          aria-current="page"
+          routerLink="/login"
+          *ngIf="!token"
+          >SIGN IN</a
+        ><a
+          class="btn btn-md btn-outline-danger mx-2"
+          aria-current="page"
+          routerLink="/login"
+          *ngIf="token"
+          (click)="logOut()"
+          >SIGN OUT
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

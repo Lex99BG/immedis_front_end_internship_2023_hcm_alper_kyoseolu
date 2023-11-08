@@ -1,0 +1,57 @@
+
+.slide-content {
+    margin: 0 40px;
+    width: 100%;
+}
+.card-wrapper {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 35px;
+    row-gap: 35px;
+    margin: 20px 0px;
+}
+
+.user-page-wrapper {
+    position: relative;
+}
+.add-new-user {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+} 
+.add-new-user button{
+    background-color: #DC3545;
+    border: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.user-page-wrapper {
+    min-height: 80vh;
+}
+.add-prof-pic {
+    margin-bottom: 10px;
+    border: 0;
+    background:#DC3545;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.profil-pics img{
+    cursor: pointer;
+}
+.profil-pics img:hover {
+    margin-top: -2px;
+    transition: all ease-in-out 0.2s;
+}
+.alert {
+    font-style: italic;
+      padding: 0;
+      margin: 3px;
+  }

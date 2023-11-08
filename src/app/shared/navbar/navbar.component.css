@@ -1,0 +1,16 @@
+.profile img{
+    width: 90px;
+}
+.logo{
+    width: 120px;
+}
+.nav-link {
+    text-align: center;
+}
+.btns {
+    display: flex;
+    justify-content: center;
+}
+.active-link {
+    color: #dc3545;
+}

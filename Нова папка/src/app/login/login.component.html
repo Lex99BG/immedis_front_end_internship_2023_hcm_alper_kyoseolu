@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<main class="form-signin w-100 m-auto">
+  <form [formGroup]="form" (submit)="submit()">
+    <h1 class="h3 mb-3 text-center fw-normal">Please Sign In</h1>
+
+    <label>User Name</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="JohnDoe"
+      formControlName="userName"
+      required
+    />
+    <div
+      *ngIf="
+        form.get('userName')?.invalid &&
+        (form.get('userName')?.dirty || form.get('userName')?.touched)
+      "
+      class="alert"
+    >
+      <div
+        class="text-danger"
+        *ngIf="form.get('userName')?.hasError('required')"
+      >
+        User Name is required.
+      </div>
+    </div>
+
+    <label>Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      class="form-control"
+      placeholder="Password"
+      required
+    />
+    <div
+      *ngIf="
+        form.get('password')?.invalid &&
+        (form.get('password')?.dirty || form.get('password')?.touched)
+      "
+      class="alert"
+    >
+      <div
+        class="text-danger"
+        *ngIf="form.get('password')?.hasError('required')"
+      >
+        Password is required.
+      </div>
+    </div>
+
+    <button class="btn btn-danger w-100 py-2 my-2" type="submit">
+      Sign in
+    </button>
+  </form>
+</main>

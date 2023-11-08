@@ -1,0 +1,115 @@
+.card {
+    width: 320px;
+    border-radius: 25px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.image-content, .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px 14px;
+}
+.image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 0;
+}
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #DC3545;
+    border-radius: 25px 25px 0 25px;
+    
+}
+.overlay::before,
+.overlay::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    height: 40px;
+    width: 40px;
+    background-color: #DC3545;
+}
+.user-type-admin::before {
+    background-color: #DC3545;
+}
+
+.user-type-user::before {
+    background-color: #dcbb35;
+}
+.overlay::after {
+    border-radius: 0px 25px 0px 0px;
+    background-color: #fff;
+}
+.card-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 3px;
+}
+.card-image a {
+    cursor: pointer;
+}
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #DC3545;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    
+}
+.user-name a{
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.description {
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.show-password {
+    cursor: pointer;
+}
+
+.user-page-wrapper {
+    position: relative;
+}
+.add-new-user {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+} 
+.add-new-user button{
+    background-color: #DC3545;
+    border: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.disabled-link {
+    color: #ccc; /* Change the color to a muted gray or any other desired color */
+    text-decoration: line-through; /* Add a line-through effect to indicate it's not clickable */
+    pointer-events: none; /* Make the link unclickable */
+    cursor: not-allowed; /* Change the cursor to indicate it's not clickable */
+  }
+@media only screen and (max-width: 350px) {
+    .card { width: 100%;}
+  }

@@ -1,0 +1,53 @@
+<div class="container-fluid bg-dark" data-bs-theme="dark">
+  <footer
+    class="container d-flex flex-wrap justify-content-between align-items-center py-3 border-top"
+  >
+    <p class="col-md-4 mb-0 text-body-secondary">
+      &copy; 2023 Skill Flow, Inc.
+    </p>
+
+    <a
+      routerLink=""
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none logo"
+    >
+      <img src="../../assets/skillFlow-logo.png" alt="" />
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a
+          routerLink=""
+          class="nav-link px-2 text-body-secondary"
+          [ngClass]="{ 'active-class': isClassActive }"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link px-2 text-body-secondary"
+          aria-disabled="true"
+          routerLink="/users-list"
+          [ngClass]="{ 'active-class': isClassActive }"
+          [ngClass]="{ disabled: !token }"
+          >Users List</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="btn btn-md btn-outline-danger mx-2"
+          aria-current="page"
+          routerLink="/login"
+          *ngIf="!token"
+          >SIGN IN</a
+        ><a
+          class="btn btn-md btn-outline-danger mx-2"
+          aria-current="page"
+          routerLink="/login"
+          *ngIf="token"
+          (click)="logOut()"
+          >SIGN OUT
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>

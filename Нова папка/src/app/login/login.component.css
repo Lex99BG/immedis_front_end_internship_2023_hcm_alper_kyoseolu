@@ -1,0 +1,12 @@
+.reg {
+    color: #DC3545;
+}
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+.alert {
+    font-style: italic;
+      padding: 0;
+      margin: 3px;
+}
